@@ -20,7 +20,7 @@ researcher = Agent(
         "the world."
     ),
     tools=[search_tool],
-    allow_delegation=True
+    allow_delegation=False
 )
 
 # Creating a writer agent with custom tools and delegation capability
@@ -32,7 +32,7 @@ writer = Agent(
     backstory=(
         "With a flair for simplifying complex topics, you craft"
         "engaging narratives that captivate and educate, bringing new"
-        "discoveries to light in an accessible manner."
+        "discoveries to light in an accessible manner. Write in pt-BR"
     ),
     tools=[search_tool],
     allow_delegation=False
@@ -44,9 +44,9 @@ research_task = Task(
         "Identify the next big trend in {topic}."
         "Focus on identifying pros and cons and the overall narrative."
         "Your final report should clearly articulate the key points,"
-        "its market opportunities, and potential risks."
+        "its market opportunities, and potential risks. Research in pt-BR"
     ),
-    expected_output='A comprehensive 3 paragraphs long report on the latest AI trends.',
+    expected_output='A comprehensive 3 paragraphs long report on the latest AI trends in pt-BR.',
     tools=[search_tool],
     agent=researcher,
 )
@@ -58,7 +58,7 @@ write_task = Task(
         "Focus on the latest trends and how it's impacting the industry."
         "This article should be easy to understand, engaging, and positive."
     ),
-    expected_output='A 4 paragraph article on {topic} advancements formatted as markdown.',
+    expected_output='A 4 paragraph article on {topic} advancements formatted as markdown in pt-BR',
     tools=[search_tool],
     agent=writer,
     async_execution=False,
@@ -72,7 +72,7 @@ crew = Crew(
     process=Process.sequential,  # Optional: Sequential task execution is default
     memory=True,
     cache=True,
-    max_rpm=3,
+    max_rpm=1,
     share_crew=True
 )
 
