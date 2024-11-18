@@ -1,4 +1,5 @@
 .venv/
+venv/
 .env
 new-blog-post.md
 novo-post-no-blog.md

@@ -1,8 +1,8 @@
 # Instruções iniciais:
 
-### \* Criar o virtualenv com o comando: python3 -m venv .venv
+### \* Criar o virtualenv com o comando: python3 -m venv venv
 
-### \* Ativar o virtualenv com o comando: source .venv/bin/activate (linux/mac) ou .\env\Scripts\activate.bat (windows)
+### \* Ativar o virtualenv com o comando: source venv/bin/activate (linux/mac) ou .\env\Scripts\activate.bat (windows)
 
 ### \* Instalar as dependências com o comando: pip install -r requirements.txt
 
